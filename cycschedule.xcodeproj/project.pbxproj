@@ -24,6 +24,13 @@
 			remoteGlobalIDString = B13758301B1D154300050AA1;
 			remoteInfo = cycschedule;
 		};
+		B162C8EA1B1D1BE200995AC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B13758291B1D154300050AA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B13758301B1D154300050AA1;
+			remoteInfo = cycschedule;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,7 @@
 		B13758481B1D154400050AA1 /* cycscheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cycscheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B137584D1B1D154400050AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B137584E1B1D154400050AA1 /* cycscheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cycscheduleTests.swift; sourceTree = "<group>"; };
+		B162C8E41B1D1BE200995AC5 /* cycschedule Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cycschedule Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B13758451B1D154400050AA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B162C8E11B1D1BE200995AC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,6 +87,7 @@
 			children = (
 				B13758311B1D154300050AA1 /* cycschedule.app */,
 				B13758481B1D154400050AA1 /* cycscheduleTests.xctest */,
+				B162C8E41B1D1BE200995AC5 /* cycschedule Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,6 +169,24 @@
 			productReference = B13758481B1D154400050AA1 /* cycscheduleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B162C8E31B1D1BE200995AC5 /* cycschedule Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B162C8EC1B1D1BE200995AC5 /* Build configuration list for PBXNativeTarget "cycschedule Tests" */;
+			buildPhases = (
+				B162C8E01B1D1BE200995AC5 /* Sources */,
+				B162C8E11B1D1BE200995AC5 /* Frameworks */,
+				B162C8E21B1D1BE200995AC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B162C8EB1B1D1BE200995AC5 /* PBXTargetDependency */,
+			);
+			name = "cycschedule Tests";
+			productName = "cycschedule Tests";
+			productReference = B162C8E41B1D1BE200995AC5 /* cycschedule Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,8 +198,13 @@
 				TargetAttributes = {
 					B13758301B1D154300050AA1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 39Y9EZEHX4;
 					};
 					B13758471B1D154400050AA1 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = B13758301B1D154300050AA1;
+					};
+					B162C8E31B1D1BE200995AC5 = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = B13758301B1D154300050AA1;
 					};
@@ -186,6 +225,7 @@
 			targets = (
 				B13758301B1D154300050AA1 /* cycschedule */,
 				B13758471B1D154400050AA1 /* cycscheduleTests */,
+				B162C8E31B1D1BE200995AC5 /* cycschedule Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +242,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B13758461B1D154400050AA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B162C8E21B1D1BE200995AC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -229,6 +276,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B162C8E01B1D1BE200995AC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -236,6 +290,11 @@
 			isa = PBXTargetDependency;
 			target = B13758301B1D154300050AA1 /* cycschedule */;
 			targetProxy = B13758491B1D154400050AA1 /* PBXContainerItemProxy */;
+		};
+		B162C8EB1B1D1BE200995AC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B13758301B1D154300050AA1 /* cycschedule */;
+			targetProxy = B162C8EA1B1D1BE200995AC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -346,9 +405,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = cycschedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -356,9 +418,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = cycschedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -396,6 +461,40 @@
 			};
 			name = Release;
 		};
+		B162C8ED1B1D1BE200995AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "cycschedule Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cycschedule.app/cycschedule";
+			};
+			name = Debug;
+		};
+		B162C8EE1B1D1BE200995AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "cycschedule Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cycschedule.app/cycschedule";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,12 +514,22 @@
 				B13758541B1D154400050AA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B13758551B1D154400050AA1 /* Build configuration list for PBXNativeTarget "cycscheduleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B13758561B1D154400050AA1 /* Debug */,
 				B13758571B1D154400050AA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B162C8EC1B1D1BE200995AC5 /* Build configuration list for PBXNativeTarget "cycschedule Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B162C8ED1B1D1BE200995AC5 /* Debug */,
+				B162C8EE1B1D1BE200995AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
