@@ -14,6 +14,9 @@
 		B13758401B1D154400050AA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B137583F1B1D154400050AA1 /* Images.xcassets */; };
 		B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13758411B1D154400050AA1 /* LaunchScreen.xib */; };
 		B137584F1B1D154400050AA1 /* cycscheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137584E1B1D154400050AA1 /* cycscheduleTests.swift */; };
+		B162C8F01B1D1CAF00995AC5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758381B1D154400050AA1 /* MasterViewController.swift */; };
+		B162C8F11B1D1CD500995AC5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137583A1B1D154400050AA1 /* DetailViewController.swift */; };
+		B162C8F21B1D1CDC00995AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758361B1D154300050AA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -272,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B162C8F21B1D1CDC00995AC5 /* AppDelegate.swift in Sources */,
+				B162C8F11B1D1CD500995AC5 /* DetailViewController.swift in Sources */,
+				B162C8F01B1D1CAF00995AC5 /* MasterViewController.swift in Sources */,
 				B137584F1B1D154400050AA1 /* cycscheduleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
