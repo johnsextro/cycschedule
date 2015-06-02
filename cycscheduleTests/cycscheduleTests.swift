@@ -25,7 +25,7 @@ class cycscheduleTests: XCTestCase {
     func testInitialViewLoaded() {
         let expectedView = MasterViewController()
         
-        XCTAssertNotNil(expectedView.view, "The expected initial view did not load")
+        XCTAssertNotNil(expectedView.view, "The expected Master view did not load")        
     }
     
 }
