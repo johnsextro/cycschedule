@@ -116,7 +116,7 @@
                     <navigationItem key="navigationItem" title="My Teams" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XCg-l6-0eN">
                             <connections>
-                                <segue destination="tAq-uJ-gcz" kind="push" id="etj-9u-NpV"/>
+                                <segue destination="tAq-uJ-gcz" kind="show" id="etj-9u-NpV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -157,7 +157,7 @@
                     <navigationItem key="navigationItem" title="Seasons" id="an2-Lp-B14">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="qni-yv-IAi">
                             <connections>
-                                <segue destination="D79-ev-2U1" kind="push" identifier="toSchools" id="o9I-Rv-G9R"/>
+                                <segue destination="D79-ev-2U1" kind="show" identifier="toSchools" id="o9I-Rv-G9R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,7 +198,7 @@
                     <navigationItem key="navigationItem" title="Schools" id="qk8-VC-6wn">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="lL3-2G-oRM">
                             <connections>
-                                <segue destination="kel-yT-S7L" kind="push" identifier="toTeams" id="s5U-gG-XRO"/>
+                                <segue destination="kel-yT-S7L" kind="show" identifier="toTeams" id="s5U-gG-XRO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
