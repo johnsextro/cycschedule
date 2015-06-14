@@ -17,6 +17,7 @@
 		B13AE2461B2CDB0D00F9B7A2 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2451B2CDB0D00F9B7A2 /* TeamsViewController.swift */; };
 		B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2471B2CDBD000F9B7A2 /* Team.swift */; };
 		B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2491B2CE08700F9B7A2 /* SampleData.swift */; };
+		B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */; };
 		B162C8F01B1D1CAF00995AC5 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758381B1D154400050AA1 /* MasterViewController.swift */; };
 		B162C8F11B1D1CD500995AC5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137583A1B1D154400050AA1 /* DetailViewController.swift */; };
 		B162C8F21B1D1CDC00995AC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758361B1D154300050AA1 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		B13AE2451B2CDB0D00F9B7A2 /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		B13AE2471B2CDBD000F9B7A2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		B13AE2491B2CE08700F9B7A2 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				B13AE2451B2CDB0D00F9B7A2 /* TeamsViewController.swift */,
 				B13AE2471B2CDBD000F9B7A2 /* Team.swift */,
 				B13AE2491B2CE08700F9B7A2 /* SampleData.swift */,
+				B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */,
 			);
 			path = cycschedule;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B137583B1B1D154400050AA1 /* DetailViewController.swift in Sources */,
+				B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */,
 				B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */,
 				B13AE2461B2CDB0D00F9B7A2 /* TeamsViewController.swift in Sources */,
 				B13758391B1D154400050AA1 /* MasterViewController.swift in Sources */,

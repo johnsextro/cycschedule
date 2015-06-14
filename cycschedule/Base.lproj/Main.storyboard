@@ -128,7 +128,7 @@
         <!--Season-->
         <scene sceneID="dbW-8H-WZz">
             <objects>
-                <tableViewController id="tAq-uJ-gcz" sceneMemberID="viewController">
+                <tableViewController id="tAq-uJ-gcz" customClass="SeasonsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cl5-Iu-VP7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
