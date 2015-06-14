@@ -1,16 +1,20 @@
 import Foundation
 import UIKit
 
-class SeasonsViewController: UITableViewController {
-
-    var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/season/SeasonService.season"
+class SchoolsViewController: UITableViewController {
+    
+    var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/school/SchoolService.school"
     var TableData:Array< String > = Array < String >()
     var lastSelectedIndexPath: NSIndexPath?
+    var season: String!
     
     override func viewDidLoad() {
         let timeout = 15
         let url = NSURL(string: postEndpoint)
+        var err: NSError?
+        var params = ["season":season] as Dictionary<String, String>
         var urlRequest = NSMutableURLRequest(URL: url!)
+        urlRequest.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.HTTPMethod = "POST"
         let queue = NSOperationQueue()
@@ -49,7 +53,7 @@ class SeasonsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
+        
         
         if indexPath.row != lastSelectedIndexPath?.row {
             if let lastSelectedIndexPath = lastSelectedIndexPath{
@@ -61,14 +65,14 @@ class SeasonsViewController: UITableViewController {
             newCell?.accessoryType = .Checkmark
             
             lastSelectedIndexPath = indexPath
-            self.navigationItem.rightBarButtonItem?.enabled = true
         }
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "toSchools") {
-            var svc = segue.destinationViewController as! SchoolsViewController
-            svc.season = TableData[lastSelectedIndexPath!.item]
+        if (segue.identifier == "toTeams") {
+            var tvc = segue.destinationViewController as! TeamsViewController
+            tvc.season = self.season
+            tvc.school = TableData[lastSelectedIndexPath!.item]
         }
     }
     
@@ -79,15 +83,15 @@ class SeasonsViewController: UITableViewController {
         let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &parseError)
         if (parseError == nil)
         {
-            if let seasons_obj = json as? NSDictionary
+            if let schools_obj = json as? NSDictionary
             {
-                if let seasons = seasons_obj["seasons"] as? NSArray
+                if let schools = schools_obj["schools"] as? NSArray
                 {
-                    for (var i = 0; i < seasons.count ; i++ )
+                    for (var i = 0; i < schools.count ; i++ )
                     {
-                        if let season_obj = seasons[i] as? NSDictionary
+                        if let school_obj = schools[i] as? NSDictionary
                         {
-                            if let season = season_obj["season"] as? String
+                            if let season = school_obj["school"] as? String
                             {
                                 TableData.append(season)
                             }

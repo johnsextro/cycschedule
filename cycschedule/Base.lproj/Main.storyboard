@@ -73,7 +73,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="TeamsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="LocalTeamsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Teams" id="Zdf-7t-Un8">
+                    <navigationItem key="navigationItem" title="My Teams" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XCg-l6-0eN">
                             <connections>
                                 <segue destination="tAq-uJ-gcz" kind="push" id="etj-9u-NpV"/>
@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="709" y="-630"/>
         </scene>
-        <!--Season-->
+        <!--Seasons-->
         <scene sceneID="dbW-8H-WZz">
             <objects>
                 <tableViewController id="tAq-uJ-gcz" customClass="SeasonsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,11 +154,93 @@
                             <outlet property="delegate" destination="tAq-uJ-gcz" id="qZt-C0-EYs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Season" id="an2-Lp-B14"/>
+                    <navigationItem key="navigationItem" title="Seasons" id="an2-Lp-B14">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="qni-yv-IAi">
+                            <connections>
+                                <segue destination="D79-ev-2U1" kind="push" identifier="toSchools" id="o9I-Rv-G9R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fF-ri-2JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1396" y="-630"/>
+        </scene>
+        <!--Schools-->
+        <scene sceneID="Wnh-D1-znK">
+            <objects>
+                <tableViewController id="D79-ev-2U1" customClass="SchoolsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="x6g-a5-pWG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" textLabel="Go0-OT-d6e" style="IBUITableViewCellStyleDefault" id="C8T-SE-dHV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C8T-SE-dHV" id="YyP-l0-xff">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Go0-OT-d6e">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="D79-ev-2U1" id="FsG-5c-y2w"/>
+                            <outlet property="delegate" destination="D79-ev-2U1" id="lRE-fh-yF3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Schools" id="qk8-VC-6wn">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="lL3-2G-oRM">
+                            <connections>
+                                <segue destination="kel-yT-S7L" kind="push" identifier="toTeams" id="s5U-gG-XRO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4BP-Wb-RDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2074" y="-630"/>
+        </scene>
+        <!--Teams-->
+        <scene sceneID="wmB-6d-EL0">
+            <objects>
+                <tableViewController id="kel-yT-S7L" customClass="TeamsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MxX-pc-1ht">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" textLabel="P3A-pC-X1p" style="IBUITableViewCellStyleDefault" id="s0J-hz-VQw">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s0J-hz-VQw" id="XwE-w4-vqa">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P3A-pC-X1p">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kel-yT-S7L" id="oT9-dI-pEb"/>
+                            <outlet property="delegate" destination="kel-yT-S7L" id="btk-cw-XEu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Teams" id="ZTZ-32-61c"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xN2-XO-ehQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2074" y="168"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -177,6 +259,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tll-UG-LXB"/>
+        <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
 </document>
