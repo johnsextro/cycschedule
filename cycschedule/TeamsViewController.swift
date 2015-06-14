@@ -1,15 +1,13 @@
 import Foundation
 import UIKit
 
-class TeamsViewController: UITableViewController {
-    
-    var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/coach/CoachService.coach"
-    var TableData:Array< String > = Array < String >()
-    var lastSelectedIndexPath: NSIndexPath?
+class TeamsViewController: SelectionViewController {
+
     var season: String!
     var school: String!
     
     override func viewDidLoad() {
+        var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/coach/CoachService.coach"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
         var err: NSError?
@@ -37,43 +35,11 @@ class TeamsViewController: UITableViewController {
         )
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TableData.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.accessoryType = .None
-        cell.textLabel?.text = TableData[indexPath.row]
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        
-        if indexPath.row != lastSelectedIndexPath?.row {
-            if let lastSelectedIndexPath = lastSelectedIndexPath{
-                let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
-                oldCell?.accessoryType = .None
-            }
-            
-            let newCell = tableView.cellForRowAtIndexPath(indexPath)
-            newCell?.accessoryType = .Checkmark
-            
-            lastSelectedIndexPath = indexPath
-        }
-    }
-    
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //
 //    }
     
-    func extract_json(data:NSString)
+    override func extract_json(data:NSString)
     {
         var parseError: NSError?
         let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
@@ -101,13 +67,5 @@ class TeamsViewController: UITableViewController {
             }
         }
         do_table_refresh();
-    }
-    
-    func do_table_refresh()
-    {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
     }
 }

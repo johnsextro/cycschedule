@@ -1,13 +1,10 @@
 import Foundation
 import UIKit
 
-class SeasonsViewController: UITableViewController {
-
-    var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/season/SeasonService.season"
-    var TableData:Array< String > = Array < String >()
-    var lastSelectedIndexPath: NSIndexPath?
+class SeasonsViewController: SelectionViewController {
     
     override func viewDidLoad() {
+        var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/season/SeasonService.season"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
         var urlRequest = NSMutableURLRequest(URL: url!)
@@ -32,39 +29,6 @@ class SeasonsViewController: UITableViewController {
         )
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TableData.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.accessoryType = .None
-        cell.textLabel?.text = TableData[indexPath.row]
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-        
-        if indexPath.row != lastSelectedIndexPath?.row {
-            if let lastSelectedIndexPath = lastSelectedIndexPath{
-                let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
-                oldCell?.accessoryType = .None
-            }
-            
-            let newCell = tableView.cellForRowAtIndexPath(indexPath)
-            newCell?.accessoryType = .Checkmark
-            
-            lastSelectedIndexPath = indexPath
-            self.navigationItem.rightBarButtonItem?.enabled = true
-        }
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toSchools") {
             var svc = segue.destinationViewController as! SchoolsViewController
@@ -72,7 +36,7 @@ class SeasonsViewController: UITableViewController {
         }
     }
     
-    func extract_json(data:NSString)
+    override func extract_json(data:NSString)
     {
         var parseError: NSError?
         let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
@@ -89,7 +53,7 @@ class SeasonsViewController: UITableViewController {
                         {
                             if let season = season_obj["season"] as? String
                             {
-                                TableData.append(season)
+                                super.TableData.append(season)
                             }
                         }
                     }
@@ -97,13 +61,5 @@ class SeasonsViewController: UITableViewController {
             }
         }
         do_table_refresh();
-    }
-    
-    func do_table_refresh()
-    {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
     }
 }

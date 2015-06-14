@@ -196,7 +196,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Schools" id="qk8-VC-6wn">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="lL3-2G-oRM">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="lL3-2G-oRM">
                             <connections>
                                 <segue destination="kel-yT-S7L" kind="push" identifier="toTeams" id="s5U-gG-XRO"/>
                             </connections>
