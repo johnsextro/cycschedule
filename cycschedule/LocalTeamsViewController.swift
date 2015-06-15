@@ -3,6 +3,10 @@ import UIKit
 class LocalTeamsViewController: UITableViewController {
     var teams: [Team] = teamsData
     
+    @IBAction func saveNewTeam(segue:UIStoryboardSegue) {
+        
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

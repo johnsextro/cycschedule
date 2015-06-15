@@ -236,9 +236,16 @@
                             <outlet property="delegate" destination="kel-yT-S7L" id="btk-cw-XEu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Teams" id="ZTZ-32-61c"/>
+                    <navigationItem key="navigationItem" title="Teams" id="ZTZ-32-61c">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="z51-1n-wJT">
+                            <connections>
+                                <segue destination="m4U-pg-DeS" kind="unwind" unwindAction="saveNewTeam:" id="QPX-G7-yeI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN2-XO-ehQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="m4U-pg-DeS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2074" y="168"/>
         </scene>
