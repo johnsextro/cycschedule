@@ -1,17 +1,9 @@
-//
-//  DetailViewController.swift
-//  cycschedule
-//
-//  Created by Family on 6/1/15.
-//  Copyright (c) 2015 9 Principles. All rights reserved.
-//
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+class DetailViewController: UITableViewController {
+    
+    var team: Team!
 
     var detailItem: AnyObject? {
         didSet {
@@ -22,16 +14,17 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+//        if let detail: AnyObject = self.detailItem {
+//            if let label = self.detailDescriptionLabel {
+//                label.title = detail.description
+//            }
+//        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.title = team.name
+        
         self.configureView()
     }
 
