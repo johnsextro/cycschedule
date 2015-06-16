@@ -5,6 +5,7 @@ class TeamsViewController: SelectionViewController {
 
     var season: String!
     var school: String!
+    var teamsArray = [Team]()
     
     override func viewDidLoad() {
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/coach/CoachService.coach"
@@ -35,9 +36,12 @@ class TeamsViewController: SelectionViewController {
         )
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "SaveNewTeam") {
+            var mtvc = segue.destinationViewController as! MyTeamsViewController
+            mtvc.newTeam = teamsArray[lastSelectedIndexPath!.item]
+        }
+    }
     
     override func extract_json(data:NSString)
     {
@@ -56,10 +60,14 @@ class TeamsViewController: SelectionViewController {
                         {
                             if let team = team_obj["name"] as? String
                             {
-                                if let team_id = team_obj["team_id"] as? String
-                                {
-                                    TableData.append(team + "[" + team_id + "]")
-                                }
+                                TableData.append(team)
+                                var teamName: String = (team_obj["name"] as? String)!
+                                var teamId: Int = ((team_obj["team_id"] as? String)!).toInt()!
+                                var grade: String = (team_obj["grade"] as? String)!
+                                var school: String = (team_obj["school"] as? String)!
+                                
+                                teamsArray.append(Team(name: teamName, teamId: teamId
+                                , grade: grade, school: school))
                             }
                         }
                     }

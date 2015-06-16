@@ -14,7 +14,7 @@
 		B13758401B1D154400050AA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B137583F1B1D154400050AA1 /* Images.xcassets */; };
 		B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13758411B1D154400050AA1 /* LaunchScreen.xib */; };
 		B137584F1B1D154400050AA1 /* cycscheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137584E1B1D154400050AA1 /* cycscheduleTests.swift */; };
-		B13AE2461B2CDB0D00F9B7A2 /* LocalTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2451B2CDB0D00F9B7A2 /* LocalTeamsViewController.swift */; };
+		B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */; };
 		B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2471B2CDBD000F9B7A2 /* Team.swift */; };
 		B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2491B2CE08700F9B7A2 /* SampleData.swift */; };
 		B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */; };
@@ -24,6 +24,8 @@
 		B17D55C91B2E1A4E00AA9B58 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */; };
 		B17D55CB1B2E21CD00AA9B58 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */; };
 		B17D55CD1B2E26F500AA9B58 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D55CC1B2E26F500AA9B58 /* SelectionViewController.swift */; };
+		B17D55D11B2F9FE500AA9B58 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */; };
+		B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,13 +50,15 @@
 		B13758481B1D154400050AA1 /* cycscheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cycscheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B137584D1B1D154400050AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B137584E1B1D154400050AA1 /* cycscheduleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cycscheduleTests.swift; sourceTree = "<group>"; };
-		B13AE2451B2CDB0D00F9B7A2 /* LocalTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalTeamsViewController.swift; sourceTree = "<group>"; };
+		B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		B13AE2471B2CDBD000F9B7A2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		B13AE2491B2CE08700F9B7A2 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
 		B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		B17D55CC1B2E26F500AA9B58 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		B13758331B1D154300050AA1 /* cycschedule */ = {
 			isa = PBXGroup;
 			children = (
+				B17D55CE1B2F9FBC00AA9B58 /* Resources */,
 				B13758361B1D154300050AA1 /* AppDelegate.swift */,
 				B13758381B1D154400050AA1 /* MasterViewController.swift */,
 				B137583A1B1D154400050AA1 /* DetailViewController.swift */,
@@ -103,7 +108,7 @@
 				B137583F1B1D154400050AA1 /* Images.xcassets */,
 				B13758411B1D154400050AA1 /* LaunchScreen.xib */,
 				B13758341B1D154300050AA1 /* Supporting Files */,
-				B13AE2451B2CDB0D00F9B7A2 /* LocalTeamsViewController.swift */,
+				B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */,
 				B13AE2471B2CDBD000F9B7A2 /* Team.swift */,
 				B13AE2491B2CE08700F9B7A2 /* SampleData.swift */,
 				B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */,
@@ -137,6 +142,15 @@
 				B137584D1B1D154400050AA1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B17D55CE1B2F9FBC00AA9B58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */,
+				B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B137583E1B1D154400050AA1 /* Main.storyboard in Resources */,
+				B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */,
 				B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */,
+				B17D55D11B2F9FE500AA9B58 /* iTunesArtwork.png in Resources */,
 				B13758401B1D154400050AA1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +260,7 @@
 				B137583B1B1D154400050AA1 /* DetailViewController.swift in Sources */,
 				B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */,
 				B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */,
-				B13AE2461B2CDB0D00F9B7A2 /* LocalTeamsViewController.swift in Sources */,
+				B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */,
 				B17D55CD1B2E26F500AA9B58 /* SelectionViewController.swift in Sources */,
 				B13758391B1D154400050AA1 /* MasterViewController.swift in Sources */,
 				B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */,

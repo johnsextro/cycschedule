@@ -1,10 +1,12 @@
 import UIKit
 
-class LocalTeamsViewController: UITableViewController {
+class MyTeamsViewController: UITableViewController {
     var teams: [Team] = teamsData
+    var newTeam: Team!
     
     @IBAction func saveNewTeam(segue:UIStoryboardSegue) {
-        
+        teams.append(newTeam)
+        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
