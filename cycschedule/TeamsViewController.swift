@@ -62,7 +62,7 @@ class TeamsViewController: SelectionViewController {
                             {
                                 TableData.append(team)
                                 var teamName: String = (team_obj["name"] as? String)!
-                                var teamId: Int = ((team_obj["team_id"] as? String)!).toInt()!
+                                var teamId: String = (team_obj["team_id"] as? String)!
                                 var grade: String = (team_obj["grade"] as? String)!
                                 var school: String = (team_obj["school"] as? String)!
                                 
