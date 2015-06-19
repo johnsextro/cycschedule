@@ -28,7 +28,9 @@ class MyTeamsViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var dvc = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-        dvc.team = teams[tableView.indexPathForSelectedRow()!.item]
+        if(segue.identifier == "showDetail") {
+            var dvc = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+            dvc.team = teams[tableView.indexPathForSelectedRow()!.item]
+        }
     }
 }

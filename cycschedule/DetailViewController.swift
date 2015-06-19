@@ -12,6 +12,30 @@ class DetailViewController: UITableViewController {
             self.configureView()
         }
     }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return games.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("GameCell", forIndexPath: indexPath) as! GameCustomCell
+        let game = games[indexPath.row] as Game
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "EEE, MMM d  h:mm a"
+        
+        let dateString = formatter.stringFromDate(game.gameDateTime)
+
+        cell.gameDate.text = dateString
+        cell.homeAway.text = (game.homeAway == "Home" ? "vs." : "at")
+        cell.opponent.text = game.opponent
+        cell.score.text = "Score: " + game.score
+        cell.location.text = "Location: " + game.location
+        return cell
+    }
 
     func configureView() {
         // Update the user interface for the detail item.
@@ -25,7 +49,7 @@ class DetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = team.name
-        var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/schedule/ScheduleService.schedule"
+        var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
         var err: NSError?
@@ -43,7 +67,6 @@ class DetailViewController: UITableViewController {
                 error: NSError!) in
                 if data.length > 0 && error == nil{
                     let json = NSString(data: data, encoding: NSASCIIStringEncoding)
-                    println(json)
                     self.extract_json(json!)
                 }else if data.length == 0 && error == nil{
                     println("Nothing was downloaded")
@@ -69,32 +92,39 @@ class DetailViewController: UITableViewController {
         {
             if let schedule_obj = json as? NSDictionary
             {
-                if let games_obj = schedule_obj["schedule"] as? NSDictionary
+                if let gamesArray = schedule_obj["games"] as? NSArray
                 {
-                    if let gamesArray = games_obj["games"] as? NSArray
+                    for (var i = 0; i < gamesArray.count ; i++ )
                     {
-                        println(gamesArray.count)
-                        for (var i = 0; i < gamesArray.count ; i++ )
+                        if let game_obj = gamesArray[i] as? NSDictionary
                         {
-                            if let game_obj = gamesArray[i] as? NSDictionary
+                            if let gameId = game_obj["game_id"] as? String
                             {
-                                var gameId: String = (game_obj["id"] as? String)!
                                 var homeTeam: String = (game_obj["home"] as? String)!
                                 var awayTeam: String = (game_obj["away"] as? String)!
-                                var homeAway: String = (homeTeam == team.name ? "Home" : "Away")
-                                var opponent: String = (homeTeam == team.name ? awayTeam : homeTeam)
+                                var homeAway: String = (homeTeam.rangeOfString(team.name) != nil ? "Home" : "Away")
+                                var opponent: String = (homeTeam.rangeOfString(team.name) != nil ? awayTeam : homeTeam)
                                 var location: String = (game_obj["location"] as? String)!
                                 var score: String = (game_obj["score"] as? String)!
                                 var gameDate: String = (game_obj["game_date"] as? String)!
-                                var gameTime: String = (game_obj["game_time"] as? String)!
+                                var gameTime: String = (game_obj["time"] as? String)!
                                 
                                 games.append(Game(gameId: gameId, gameDate: gameDate, gameTime: gameTime, homeAway: homeAway, opponent: opponent, location: location, score: score))
-                                }
                             }
                         }
                     }
+                    println(games.count)
                 }
             }
         }
-//        do_table_refresh();
+        do_table_refresh();
     }
+    
+    func do_table_refresh()
+    {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+            return
+        })
+    }
+}

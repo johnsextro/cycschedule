@@ -23,6 +23,7 @@
 		B17D55D11B2F9FE500AA9B58 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */; };
 		B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */; };
 		B19F32EF1B33979800A995F3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F32EE1B33979800A995F3 /* Game.swift */; };
+		B1B135C41B34BEA3001D1796 /* GameCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		B19F32EE1B33979800A995F3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */,
 				B17D55CC1B2E26F500AA9B58 /* SelectionViewController.swift */,
 				B19F32EE1B33979800A995F3 /* Game.swift */,
+				B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */,
 			);
 			path = cycschedule;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1B135C41B34BEA3001D1796 /* GameCustomCell.swift in Sources */,
 				B17D55C91B2E1A4E00AA9B58 /* SchoolsViewController.swift in Sources */,
 				B137583B1B1D154400050AA1 /* DetailViewController.swift in Sources */,
 				B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */,

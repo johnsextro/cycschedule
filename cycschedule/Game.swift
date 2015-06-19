@@ -11,15 +11,16 @@ struct Game {
     init(gameId: String, gameDate: String, gameTime: String, homeAway: String,
     opponent: String, location: String, score: String) {
         let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.dateFormat = "yyyy-MM-dd h:mm a"
+        dateStringFormatter.dateFormat = "MM/dd/yyyy h:mm a"
         dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let gameDateTime = dateStringFormatter.dateFromString(gameDate + " " + gameTime)!
+        var dateString = gameDate + " " + gameTime
+        var gameDateTime = dateStringFormatter.dateFromString(dateString)
         
         self.gameId = gameId
         self.opponent = opponent
         self.location = location
         self.score = score
         self.homeAway = homeAway
-        self.gameDateTime = gameDateTime
+        self.gameDateTime = gameDateTime!
     }
 }
