@@ -48,7 +48,7 @@ class DetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = team.name
+        self.navigationItem.title? = team.name
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
@@ -113,7 +113,6 @@ class DetailViewController: UITableViewController {
                             }
                         }
                     }
-                    println(games.count)
                 }
             }
         }
