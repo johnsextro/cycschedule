@@ -5,29 +5,23 @@ class MyTeamsViewController: UITableViewController {
     var teams = [NSManagedObject]()
     var newTeam: Team!
     var lastSelectedIndexPath: NSIndexPath?
+    let appDelegate: AppDelegate
+    let managedContext: NSManagedObjectContext
     
     @IBAction func saveNewTeam(segue:UIStoryboardSegue) {
+        self.fetchResults()
         tableView.reloadData()
+    }
+    
+    required init!(coder aDecoder: NSCoder!) {
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext!
+        super.init(coder: aDecoder)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
-        let fetchRequest = NSFetchRequest(entityName:"Teams")
-    
-        var error: NSError?
-        
-        let fetchedResults =
-        managedContext.executeFetchRequest(fetchRequest,
-            error: &error) as? [NSManagedObject]
-        
-        if let results = fetchedResults {
-            teams = results
-        } else {
-            println("Could not fetch \(error), \(error!.userInfo)")
-        }
+        self.fetchResults()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -53,6 +47,20 @@ class MyTeamsViewController: UITableViewController {
             var dvc = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
             let team = teams[tableView.indexPathForSelectedRow()!.item]
             dvc.team = Team(name: (team.valueForKey("name") as? String)!, teamId: (team.valueForKey("teamId") as? String)!, grade: (team.valueForKey("grade") as? String)!, school: (team.valueForKey("school") as? String)!)
+        }
+    }
+    
+    func fetchResults() {
+        let fetchRequest = NSFetchRequest(entityName:"Teams")
+        var error: NSError?
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            teams = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
         }
     }
 }
