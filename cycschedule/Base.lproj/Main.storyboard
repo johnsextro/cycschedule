@@ -40,14 +40,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="vs." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5s-jb-y9O" userLabel="homeAway">
-                                            <rect key="frame" x="17" y="36" width="27" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="opponent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-7e-lmy" userLabel="opponent">
-                                            <rect key="frame" x="40" y="36" width="317" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="opponent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-7e-lmy" userLabel="opponent">
+                                            <rect key="frame" x="17" y="36" width="340" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -67,12 +61,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="nBI-xe-8QK" secondAttribute="trailing" constant="2" id="4kK-PL-3fY"/>
-                                        <constraint firstItem="kQx-7e-lmy" firstAttribute="leading" secondItem="w5s-jb-y9O" secondAttribute="trailing" constant="-1" id="qTQ-GH-czL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="gameDate" destination="Jj7-Yh-vlw" id="iby-cX-ROj"/>
-                                    <outlet property="homeAway" destination="w5s-jb-y9O" id="G2i-CT-kD0"/>
                                     <outlet property="location" destination="mTt-fS-7K6" id="Abx-kZ-5Ie"/>
                                     <outlet property="opponent" destination="kQx-7e-lmy" id="3qj-El-nLX"/>
                                     <outlet property="score" destination="nBI-xe-8QK" id="D0V-wi-37L"/>

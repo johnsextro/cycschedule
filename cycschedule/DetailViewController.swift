@@ -30,10 +30,23 @@ class DetailViewController: UITableViewController {
         let dateString = formatter.stringFromDate(game.gameDateTime)
 
         cell.gameDate.text = dateString
-        cell.homeAway.text = (game.homeAway == "Home" ? "vs." : "at")
-        cell.opponent.text = game.opponent
+        var vsOrAt = (game.homeAway == "Home" ? "vs." : "at")
+        cell.opponent.text = vsOrAt + " " + game.opponent
         cell.score.text = "Score: " + game.score
         cell.location.text = "Location: " + game.location
+        
+        let today = NSDate()
+        if (game.gameDateTime.compare(today) == .OrderedAscending) {
+            cell.gameDate.enabled   = false
+            cell.opponent.enabled   = false
+            cell.score.enabled      = false
+            cell.location.enabled   = false
+        } else {
+            cell.gameDate.enabled   = true
+            cell.opponent.enabled   = true
+            cell.score.enabled      = true
+            cell.location.enabled   = true
+        }
         return cell
     }
 
