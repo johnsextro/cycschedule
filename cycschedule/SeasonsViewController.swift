@@ -3,7 +3,10 @@ import UIKit
 
 class SeasonsViewController: SelectionViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
+        activityIndicator.startAnimating()
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/season/SeasonService.season"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
@@ -61,5 +64,6 @@ class SeasonsViewController: SelectionViewController {
             }
         }
         do_table_refresh();
+        activityIndicator.stopAnimating()
     }
 }
