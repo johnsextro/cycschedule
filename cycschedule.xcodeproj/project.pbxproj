@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1050E301B35274A000AABA0 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1050E2F1B35274A000AABA0 /* Media.xcassets */; };
 		B13758371B1D154300050AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758361B1D154300050AA1 /* AppDelegate.swift */; };
 		B13758391B1D154400050AA1 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13758381B1D154400050AA1 /* MasterViewController.swift */; };
 		B137583B1B1D154400050AA1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B137583A1B1D154400050AA1 /* DetailViewController.swift */; };
 		B137583E1B1D154400050AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B137583C1B1D154400050AA1 /* Main.storyboard */; };
-		B13758401B1D154400050AA1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B137583F1B1D154400050AA1 /* Images.xcassets */; };
 		B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13758411B1D154400050AA1 /* LaunchScreen.xib */; };
+		B138F74D1B352626006F3FF9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138F74B1B352626006F3FF9 /* Icon-72@2x.png */; };
+		B138F74E1B352626006F3FF9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138F74C1B352626006F3FF9 /* Icon@2x.png */; };
 		B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */; };
 		B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2471B2CDBD000F9B7A2 /* Team.swift */; };
 		B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2491B2CE08700F9B7A2 /* SampleData.swift */; };
@@ -38,16 +40,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1050E2F1B35274A000AABA0 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../Media.xcassets; sourceTree = "<group>"; };
 		B13758311B1D154300050AA1 /* cycschedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cycschedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B13758351B1D154300050AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B13758361B1D154300050AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B13758381B1D154400050AA1 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		B137583A1B1D154400050AA1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B137583D1B1D154400050AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B137583F1B1D154400050AA1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B13758421B1D154400050AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B13758481B1D154400050AA1 /* cycscheduleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cycscheduleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B137584D1B1D154400050AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B138F74B1B352626006F3FF9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		B138F74C1B352626006F3FF9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		B13AE2471B2CDBD000F9B7A2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		B13AE2491B2CE08700F9B7A2 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
@@ -101,13 +105,13 @@
 		B13758331B1D154300050AA1 /* cycschedule */ = {
 			isa = PBXGroup;
 			children = (
+				B1050E2F1B35274A000AABA0 /* Media.xcassets */,
 				B17D55CE1B2F9FBC00AA9B58 /* Resources */,
 				B13758361B1D154300050AA1 /* AppDelegate.swift */,
 				B1B135C51B34F010001D1796 /* MyTeams.xcdatamodeld */,
 				B13758381B1D154400050AA1 /* MasterViewController.swift */,
 				B137583A1B1D154400050AA1 /* DetailViewController.swift */,
 				B137583C1B1D154400050AA1 /* Main.storyboard */,
-				B137583F1B1D154400050AA1 /* Images.xcassets */,
 				B13758411B1D154400050AA1 /* LaunchScreen.xib */,
 				B13758341B1D154300050AA1 /* Supporting Files */,
 				B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */,
@@ -150,6 +154,8 @@
 		B17D55CE1B2F9FBC00AA9B58 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B138F74B1B352626006F3FF9 /* Icon-72@2x.png */,
+				B138F74C1B352626006F3FF9 /* Icon@2x.png */,
 				B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */,
 				B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */,
 			);
@@ -239,9 +245,11 @@
 			files = (
 				B137583E1B1D154400050AA1 /* Main.storyboard in Resources */,
 				B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */,
+				B1050E301B35274A000AABA0 /* Media.xcassets in Resources */,
+				B138F74E1B352626006F3FF9 /* Icon@2x.png in Resources */,
+				B138F74D1B352626006F3FF9 /* Icon-72@2x.png in Resources */,
 				B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */,
 				B17D55D11B2F9FE500AA9B58 /* iTunesArtwork.png in Resources */,
-				B13758401B1D154400050AA1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
