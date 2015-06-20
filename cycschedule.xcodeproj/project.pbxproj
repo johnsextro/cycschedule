@@ -24,6 +24,7 @@
 		B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */; };
 		B19F32EF1B33979800A995F3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F32EE1B33979800A995F3 /* Game.swift */; };
 		B1B135C41B34BEA3001D1796 /* GameCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */; };
+		B1B135C71B34F010001D1796 /* MyTeams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1B135C51B34F010001D1796 /* MyTeams.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		B19F32EE1B33979800A995F3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCustomCell.swift; sourceTree = "<group>"; };
+		B1B135C61B34F010001D1796 /* MyTeams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTeams.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				B17D55CE1B2F9FBC00AA9B58 /* Resources */,
 				B13758361B1D154300050AA1 /* AppDelegate.swift */,
+				B1B135C51B34F010001D1796 /* MyTeams.xcdatamodeld */,
 				B13758381B1D154400050AA1 /* MasterViewController.swift */,
 				B137583A1B1D154400050AA1 /* DetailViewController.swift */,
 				B137583C1B1D154400050AA1 /* Main.storyboard */,
@@ -264,6 +267,7 @@
 				B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */,
 				B17D55CD1B2E26F500AA9B58 /* SelectionViewController.swift in Sources */,
 				B19F32EF1B33979800A995F3 /* Game.swift in Sources */,
+				B1B135C71B34F010001D1796 /* MyTeams.xcdatamodeld in Sources */,
 				B13758391B1D154400050AA1 /* MasterViewController.swift in Sources */,
 				B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */,
 				B17D55CB1B2E21CD00AA9B58 /* TeamsViewController.swift in Sources */,
@@ -482,6 +486,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B1B135C51B34F010001D1796 /* MyTeams.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B1B135C61B34F010001D1796 /* MyTeams.xcdatamodel */,
+			);
+			currentVersion = B1B135C61B34F010001D1796 /* MyTeams.xcdatamodel */;
+			path = MyTeams.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B13758291B1D154300050AA1 /* Project object */;
 }

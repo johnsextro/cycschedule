@@ -5,7 +5,7 @@ class DetailViewController: UITableViewController {
     
     var team: Team!
     var games:Array< Game > = Array < Game >()
-
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
@@ -38,17 +38,11 @@ class DetailViewController: UITableViewController {
     }
 
     func configureView() {
-        // Update the user interface for the detail item.
-//        if let detail: AnyObject = self.detailItem {
-//            if let label = self.detailDescriptionLabel {
-//                label.title = detail.description
-//            }
-//        }
+        self.title = team.name
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = team.name
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
@@ -113,7 +107,6 @@ class DetailViewController: UITableViewController {
                             }
                         }
                     }
-                    println(games.count)
                 }
             }
         }
