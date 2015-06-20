@@ -2,10 +2,13 @@ import Foundation
 import UIKit
 
 class SeasonsViewController: SelectionViewController {
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityView: UIView!
+    
     override func viewDidLoad() {
+        activityView.hidden = false
         activityIndicator.startAnimating()
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/season/SeasonService.season"
         let timeout = 15
@@ -65,5 +68,6 @@ class SeasonsViewController: SelectionViewController {
         }
         do_table_refresh();
         activityIndicator.stopAnimating()
+        activityView.hidden = true
     }
 }
