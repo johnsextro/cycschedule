@@ -25,7 +25,6 @@ class MyTeamsViewController: UITableViewController {
         
         if let results = fetchedResults {
             teams = results
-            println(teams.count)
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
