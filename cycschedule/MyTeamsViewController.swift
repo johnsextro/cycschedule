@@ -60,7 +60,7 @@ class MyTeamsViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showDetail") {
-            var dvc = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+            var dvc = segue.destinationViewController as! DetailViewController
             let team = teams[tableView.indexPathForSelectedRow()!.item]
             dvc.team = Team(name: (team.valueForKey("name") as? String)!, teamId: (team.valueForKey("teamId") as? String)!, grade: (team.valueForKey("grade") as? String)!, school: (team.valueForKey("school") as? String)!)
         }
