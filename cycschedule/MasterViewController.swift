@@ -1,15 +1,20 @@
 import UIKit
 import CoreData
 
+protocol TeamSelectionDelegate: class {
+    func teamSelected(team: Team)
+}
+
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: DetailViewController? = DetailViewController()
     var objects = [NSManagedObject]()
     var lastSelectedIndexPath: NSIndexPath?
     var newTeam: Team!
     let appDelegate: AppDelegate
     let managedContext: NSManagedObjectContext
-
+    weak var delegate: TeamSelectionDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -61,9 +66,7 @@ class MasterViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 let detailItem = objects[tableView.indexPathForSelectedRow()!.item] as NSManagedObject!
-                controller.detailItem = Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                
             }
         }
     }
@@ -103,6 +106,12 @@ class MasterViewController: UITableViewController {
         default:
             return
         }
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailItem = objects[indexPath.item] as NSManagedObject!
+        let team = Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
+        self.delegate?.teamSelected(team)        
     }
 
     func deleteMyTeam(teamToDelete: NSManagedObject) {
