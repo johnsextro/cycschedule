@@ -40,8 +40,8 @@ class TeamsViewController: SelectionViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "SaveNewTeam") {
-            var mtvc = segue.destinationViewController as! MyTeamsViewController
-            mtvc.newTeam = teamsArray[lastSelectedIndexPath!.item]
+            var master = segue.destinationViewController.topViewController as! MasterViewController
+            master.newTeam = teamsArray[lastSelectedIndexPath!.item]
             saveMyTeam(teamsArray[lastSelectedIndexPath!.item])
         }
     }

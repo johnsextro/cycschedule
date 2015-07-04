@@ -1,14 +1,11 @@
-
 import UIKit
 
 class DetailViewController: UITableViewController {
     
-    var team: Team!
     var games:Array< Game > = Array < Game >()
     
-    var detailItem: AnyObject? {
+    var detailItem: Team! {
         didSet {
-            // Update the view.
             self.configureView()
         }
     }
@@ -51,16 +48,12 @@ class DetailViewController: UITableViewController {
     }
 
     func configureView() {
-        self.title = team.name
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        self.title = detailItem.name
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
         var err: NSError?
-        var params = ["team_id": team.teamId] as Dictionary<String, String>
+        var params = ["team_id": detailItem.teamId] as Dictionary<String, String>
         var urlRequest = NSMutableURLRequest(URL: url!)
         urlRequest.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
@@ -82,7 +75,13 @@ class DetailViewController: UITableViewController {
                 }
             }
         )
-        self.configureView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if ((detailItem) != nil) {
+            self.configureView()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,8 +108,8 @@ class DetailViewController: UITableViewController {
                             {
                                 var homeTeam: String = (game_obj["home"] as? String)!
                                 var awayTeam: String = (game_obj["away"] as? String)!
-                                var homeAway: String = (homeTeam.rangeOfString(team.name) != nil ? "Home" : "Away")
-                                var opponent: String = (homeTeam.rangeOfString(team.name) != nil ? awayTeam : homeTeam)
+                                var homeAway: String = (homeTeam.rangeOfString(detailItem.name) != nil ? "Home" : "Away")
+                                var opponent: String = (homeTeam.rangeOfString(detailItem.name) != nil ? awayTeam : homeTeam)
                                 var location: String = (game_obj["location"] as? String)!
                                 var score: String = (game_obj["score"] as? String)!
                                 var gameDate: String = (game_obj["game_date"] as? String)!
