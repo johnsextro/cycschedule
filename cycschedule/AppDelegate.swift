@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         println(detailViewController.description)
         println(detailViewController.isKindOfClass(DetailViewController))
         masterViewController.delegate = detailViewController
+        detailViewController.navigationItem.leftItemsSupplementBackButton = true
+        detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         return true
     }
 

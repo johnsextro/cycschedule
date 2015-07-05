@@ -127,15 +127,12 @@ class DetailViewController: UITableViewController {
     
     func do_table_refresh()
     {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
+        self.tableView.reloadData()
     }
 }
 
 extension DetailViewController: TeamSelectionDelegate {
     func teamSelected(team: Team) {
-        detailItem = team
+        self.detailItem = team
     }
 }

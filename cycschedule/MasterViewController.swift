@@ -57,20 +57,6 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
-    // MARK: - Segues
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(segue.identifier)
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                let detailItem = objects[tableView.indexPathForSelectedRow()!.item] as NSManagedObject!
-                
-            }
-        }
-    }
-
     // MARK: - Table View
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
