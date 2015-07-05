@@ -87,9 +87,8 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.item)
         let detailItem = objects[indexPath.item] as NSManagedObject!
-        let team = Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
+        let team = self.marshallObjectToTeam(detailItem)
         self.delegate?.teamSelected(team)
         if let detailViewController = self.delegate as? DetailViewController {
             splitViewController?.showDetailViewController(detailViewController, sender: nil)
@@ -121,6 +120,10 @@ class MasterViewController: UITableViewController {
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
         }
+    }
+    
+    func marshallObjectToTeam(detailItem: NSManagedObject) -> Team {
+        return Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
     }
 
 }

@@ -19,7 +19,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
                 <exit id="4u5-jc-7KY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-20.266666666666666" y="-596.39999999999998"/>
+            <point key="canvasLocation" x="-20.266666666666666" y="-596.39999999999986"/>
         </scene>
         <!--Detail-->
         <scene sceneID="xyA-HH-DZb">
@@ -77,7 +77,9 @@
                             <outlet property="delegate" destination="w01-h3-tGV" id="aBj-gB-XA8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sDo-bn-5I2" userLabel="navigationItem"/>
+                    <navigationItem key="navigationItem" id="sDo-bn-5I2" userLabel="navigationItem" colorLabel="IBBuiltInLabel-Blue">
+                        <barButtonItem key="backBarButtonItem" title="Teams" id="0EX-bV-LOk"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg9-jd-1Dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +97,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Oi-B1e" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456.5333333333333" y="-312.39999999999998"/>
+            <point key="canvasLocation" x="-456.5333333333333" y="-312.39999999999992"/>
         </scene>
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
@@ -147,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="378.13333333333333" y="-596.39999999999998"/>
+            <point key="canvasLocation" x="378.13333333333333" y="-596.39999999999986"/>
         </scene>
         <!--Seasons-->
         <scene sceneID="dbW-8H-WZz">
@@ -207,7 +209,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fF-ri-2JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744.5333333333333" y="-596.39999999999998"/>
+            <point key="canvasLocation" x="744.5333333333333" y="-596.39999999999986"/>
         </scene>
         <!--Schools-->
         <scene sceneID="Wnh-D1-znK">
@@ -248,7 +250,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BP-Wb-RDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106.1333333333332" y="-596.39999999999998"/>
+            <point key="canvasLocation" x="1106.1333333333332" y="-596.39999999999986"/>
         </scene>
         <!--Teams-->
         <scene sceneID="wmB-6d-EL0">
