@@ -1,17 +1,13 @@
 import UIKit
 
-class DetailViewController: UITableViewController, TeamSelectionDelegate {
+class DetailViewController: UITableViewController {
     
     var games:Array< Game > = Array < Game >()
     
     var detailItem: Team! {
-        didSet {
+        didSet (team) {
             self.configureView()
         }
-    }
-    
-    func teamSelected(team: Team) {
-        detailItem = team
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -135,5 +131,11 @@ class DetailViewController: UITableViewController, TeamSelectionDelegate {
             self.tableView.reloadData()
             return
         })
+    }
+}
+
+extension DetailViewController: TeamSelectionDelegate {
+    func teamSelected(team: Team) {
+        detailItem = team
     }
 }

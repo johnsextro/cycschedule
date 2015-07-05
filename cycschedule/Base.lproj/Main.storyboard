@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="-20.266666666666666" y="-596.39999999999998"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="xyA-HH-DZb">
             <objects>
-                <tableViewController id="w01-h3-tGV" customClass="DetailViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Detail" id="w01-h3-tGV" customClass="DetailViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="rff-Ka-lmc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,10 +291,10 @@
             </objects>
             <point key="canvasLocation" x="1494" y="-597"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Detail-->
         <scene sceneID="5t2-PK-AKs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0DL-eB-ldX" sceneMemberID="viewController">
+                <navigationController title="Detail" automaticallyAdjustsScrollViewInsets="NO" id="0DL-eB-ldX" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="XGL-eA-Z9t"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nif-pU-tXU">
