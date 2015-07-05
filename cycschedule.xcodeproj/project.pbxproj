@@ -15,9 +15,7 @@
 		B13758431B1D154400050AA1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13758411B1D154400050AA1 /* LaunchScreen.xib */; };
 		B138F74D1B352626006F3FF9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138F74B1B352626006F3FF9 /* Icon-72@2x.png */; };
 		B138F74E1B352626006F3FF9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B138F74C1B352626006F3FF9 /* Icon@2x.png */; };
-		B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */; };
 		B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2471B2CDBD000F9B7A2 /* Team.swift */; };
-		B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE2491B2CE08700F9B7A2 /* SampleData.swift */; };
 		B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */; };
 		B17D55C91B2E1A4E00AA9B58 /* SchoolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */; };
 		B17D55CB1B2E21CD00AA9B58 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */; };
@@ -52,9 +50,7 @@
 		B137584D1B1D154400050AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B138F74B1B352626006F3FF9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		B138F74C1B352626006F3FF9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		B13AE2471B2CDBD000F9B7A2 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		B13AE2491B2CE08700F9B7A2 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoolsViewController.swift; sourceTree = "<group>"; };
 		B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
@@ -113,16 +109,14 @@
 				B13758381B1D154400050AA1 /* MasterViewController.swift */,
 				B137583A1B1D154400050AA1 /* DetailViewController.swift */,
 				B13758411B1D154400050AA1 /* LaunchScreen.xib */,
-				B13758341B1D154300050AA1 /* Supporting Files */,
-				B13AE2451B2CDB0D00F9B7A2 /* MyTeamsViewController.swift */,
 				B13AE2471B2CDBD000F9B7A2 /* Team.swift */,
-				B13AE2491B2CE08700F9B7A2 /* SampleData.swift */,
 				B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */,
 				B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */,
 				B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */,
 				B17D55CC1B2E26F500AA9B58 /* SelectionViewController.swift */,
 				B19F32EE1B33979800A995F3 /* Game.swift */,
 				B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */,
+				B13758341B1D154300050AA1 /* Supporting Files */,
 			);
 			path = cycschedule;
 			sourceTree = "<group>";
@@ -271,8 +265,6 @@
 				B17D55C91B2E1A4E00AA9B58 /* SchoolsViewController.swift in Sources */,
 				B137583B1B1D154400050AA1 /* DetailViewController.swift in Sources */,
 				B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */,
-				B13AE24A1B2CE08700F9B7A2 /* SampleData.swift in Sources */,
-				B13AE2461B2CDB0D00F9B7A2 /* MyTeamsViewController.swift in Sources */,
 				B17D55CD1B2E26F500AA9B58 /* SelectionViewController.swift in Sources */,
 				B19F32EF1B33979800A995F3 /* Game.swift in Sources */,
 				B1B135C71B34F010001D1796 /* MyTeams.xcdatamodeld in Sources */,

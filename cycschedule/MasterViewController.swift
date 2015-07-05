@@ -1,19 +1,19 @@
-//
-//  MasterViewController.swift
-//  cycschedule
-//
-//  Created by Family on 6/1/15.
-//  Copyright (c) 2015 9 Principles. All rights reserved.
-//
-
 import UIKit
+import CoreData
+
+protocol TeamSelectionDelegate: class {
+    func teamSelected(team: Team)
+}
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
-    var objects = [AnyObject]()
-
-
+    var objects = [NSManagedObject]()
+    var lastSelectedIndexPath: NSIndexPath?
+    var newTeam: Team!
+    let appDelegate: AppDelegate
+    let managedContext: NSManagedObjectContext
+    weak var delegate: TeamSelectionDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -21,43 +21,32 @@ class MasterViewController: UITableViewController {
             self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
         }
     }
+    
+    @IBAction func saveNewTeam(segue:UIStoryboardSegue) {
+        self.fetchResults()
+        tableView.reloadData()
+    }
+    
+    required init!(coder aDecoder: NSCoder!) {
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext!
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetchResults()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-
-    // MARK: - Segues
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
     }
 
     // MARK: - Table View
@@ -71,10 +60,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let team = objects[indexPath.row]
+        cell.textLabel?.text = team.valueForKey("name") as? String
+        cell.detailTextLabel?.text = team.valueForKey("grade") as? String
         return cell
     }
 
@@ -84,14 +74,57 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        switch editingStyle {
+        case .Delete:
+            let teamToDelete = self.objects[indexPath.row]
+            deleteMyTeam(teamToDelete)
+            self.objects.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        default:
+            return
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailItem = objects[indexPath.item] as NSManagedObject!
+        let team = self.marshallObjectToTeam(detailItem)
+        self.delegate?.teamSelected(team)
+        if let detailViewController = self.delegate as? DetailViewController {
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
         }
     }
 
+    func deleteMyTeam(teamToDelete: NSManagedObject) {
+        let predicate = NSPredicate(format: "teamId == %@", (teamToDelete.valueForKey("teamId") as? String)!)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Teams")
+        fetchRequest.predicate = predicate
+        
+        let fetchedEntities = self.managedContext.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObject]
+        let entityToDelete = fetchedEntities.first
+        self.managedContext.deleteObject(entityToDelete!)
+        
+        self.managedContext.save(nil)
+    }
+    
+    func fetchResults() {
+        let fetchRequest = NSFetchRequest(entityName:"Teams")
+        var error: NSError?
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            objects = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+    }
+    
+    func marshallObjectToTeam(detailItem: NSManagedObject) -> Team {
+        return Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
+    }
 
 }
 
