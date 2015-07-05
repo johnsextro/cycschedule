@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let masterViewController = leftNavController.topViewController as! MasterViewController
         let detailNavController = splitViewController.viewControllers.last as! UINavigationController
         let detailViewController = detailNavController.viewControllers.last as! DetailViewController
-        println(detailViewController.description)
-        println(detailViewController.isKindOfClass(DetailViewController))
         masterViewController.delegate = detailViewController
         detailViewController.navigationItem.leftItemsSupplementBackButton = true
         detailViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()

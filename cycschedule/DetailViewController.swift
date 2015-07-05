@@ -6,6 +6,8 @@ class DetailViewController: UITableViewController {
     
     var detailItem: Team! {
         didSet (team) {
+            println(detailItem.name)
+            games.removeAll(keepCapacity: false)
             self.configureView()
         }
     }
@@ -48,7 +50,7 @@ class DetailViewController: UITableViewController {
     }
 
     func configureView() {
-        self.title = detailItem.name
+        self.navigationItem.title = detailItem.name
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
         let url = NSURL(string: postEndpoint)
@@ -135,6 +137,6 @@ class DetailViewController: UITableViewController {
 
 extension DetailViewController: TeamSelectionDelegate {
     func teamSelected(team: Team) {
-        self.detailItem = team
+        detailItem = team
     }
 }

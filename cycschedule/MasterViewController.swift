@@ -7,7 +7,6 @@ protocol TeamSelectionDelegate: class {
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = DetailViewController()
     var objects = [NSManagedObject]()
     var lastSelectedIndexPath: NSIndexPath?
     var newTeam: Team!
@@ -43,13 +42,6 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-//        self.navigationItem.rightBarButtonItem = addButton
-//        if let split = self.splitViewController {
-//            let controllers = split.viewControllers
-//            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +86,8 @@ class MasterViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println(indexPath.item)
         let detailItem = objects[indexPath.item] as NSManagedObject!
         let team = Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
         self.delegate?.teamSelected(team)
