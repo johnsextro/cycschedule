@@ -126,8 +126,10 @@ class DetailViewController: UITableViewController {
     }
     
     func do_table_refresh()
-    {
-        self.tableView.reloadData()
+    {        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.tableView.reloadData()
+        })
     }
 }
 

@@ -99,7 +99,7 @@ class MasterViewController: UITableViewController {
         let team = Team(name: (detailItem.valueForKey("name") as? String)!, teamId: (detailItem.valueForKey("teamId") as? String)!, grade: (detailItem.valueForKey("grade") as? String)!, school: (detailItem.valueForKey("school") as? String)!)
         self.delegate?.teamSelected(team)
         if let detailViewController = self.delegate as? DetailViewController {
-            splitViewController?.showDetailViewController(DetailViewController(), sender: nil)
+            splitViewController?.showDetailViewController(detailViewController, sender: nil)
         }
     }
 
