@@ -109,11 +109,13 @@ class MasterViewController: UITableViewController {
     }
     
     func showSelectedTeamsSchedule(selectedTeamIndex: Int) {
-        let detailItem = objects[selectedTeamIndex] as NSManagedObject!
-        let team = self.marshallObjectToTeam(detailItem)
-        self.delegate?.teamSelected(team)
-        if let detailViewController = self.delegate as? DetailViewController {
-            splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
+        if (objects.count > 0) {
+            let detailItem = objects[selectedTeamIndex] as NSManagedObject!
+            let team = self.marshallObjectToTeam(detailItem)
+            self.delegate?.teamSelected(team)
+            if let detailViewController = self.delegate as? DetailViewController {
+                splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
+            }
         }
     }
     
