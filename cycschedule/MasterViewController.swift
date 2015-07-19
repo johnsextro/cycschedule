@@ -15,7 +15,7 @@ class MasterViewController: UITableViewController {
     weak var delegate: TeamSelectionDelegate?
     var objects = [NSManagedObject](){
         didSet (objects) {
-            showSelectedTeamsSchedule(0)
+            selectTeam(0)
         }
     }
     
@@ -110,13 +110,17 @@ class MasterViewController: UITableViewController {
     
     func showSelectedTeamsSchedule(selectedTeamIndex: Int) {
         if (objects.count > 0) {
-            let detailItem = objects[selectedTeamIndex] as NSManagedObject!
-            let team = self.marshallObjectToTeam(detailItem)
-            self.delegate?.teamSelected(team)
+            selectTeam(selectedTeamIndex)
             if let detailViewController = self.delegate as? DetailViewController {
                 splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
             }
         }
+    }
+    
+    func selectTeam(selectedTeamIndex: Int) {
+        let detailItem = objects[selectedTeamIndex] as NSManagedObject!
+        let team = self.marshallObjectToTeam(detailItem)
+        self.delegate?.teamSelected(team)
     }
     
     func fetchResults() {
