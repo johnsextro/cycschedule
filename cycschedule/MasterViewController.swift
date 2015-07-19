@@ -7,12 +7,17 @@ protocol TeamSelectionDelegate: class {
 
 class MasterViewController: UITableViewController {
 
-    var objects = [NSManagedObject]()
+    
     var lastSelectedIndexPath: NSIndexPath?
     var newTeam: Team!
     let appDelegate: AppDelegate
     let managedContext: NSManagedObjectContext
     weak var delegate: TeamSelectionDelegate?
+    var objects = [NSManagedObject](){
+        didSet (objects) {
+            showSelectedTeamsSchedule(0)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -87,12 +92,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailItem = objects[indexPath.item] as NSManagedObject!
-        let team = self.marshallObjectToTeam(detailItem)
-        self.delegate?.teamSelected(team)
-        if let detailViewController = self.delegate as? DetailViewController {
-            splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
-        }
+        showSelectedTeamsSchedule(indexPath.item)
     }
 
     func deleteMyTeam(teamToDelete: NSManagedObject) {
@@ -106,6 +106,15 @@ class MasterViewController: UITableViewController {
         self.managedContext.deleteObject(entityToDelete!)
         
         self.managedContext.save(nil)
+    }
+    
+    func showSelectedTeamsSchedule(selectedTeamIndex: Int) {
+        let detailItem = objects[selectedTeamIndex] as NSManagedObject!
+        let team = self.marshallObjectToTeam(detailItem)
+        self.delegate?.teamSelected(team)
+        if let detailViewController = self.delegate as? DetailViewController {
+            splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
+        }
     }
     
     func fetchResults() {
