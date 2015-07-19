@@ -91,7 +91,7 @@ class MasterViewController: UITableViewController {
         let team = self.marshallObjectToTeam(detailItem)
         self.delegate?.teamSelected(team)
         if let detailViewController = self.delegate as? DetailViewController {
-            splitViewController?.showDetailViewController(detailViewController, sender: nil)
+            splitViewController?.showDetailViewController(detailViewController.navigationController, sender: nil)
         }
     }
 
