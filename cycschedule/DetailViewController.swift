@@ -134,6 +134,7 @@ class DetailViewController: UITableViewController {
     }
 }
 
+//TODO remove extension
 extension DetailViewController: TeamSelectionDelegate {
     func teamSelected(team: Team) {
         detailItem = team
