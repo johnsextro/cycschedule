@@ -15,7 +15,9 @@ class MasterViewController: UITableViewController {
     weak var delegate: TeamSelectionDelegate?
     var objects = [NSManagedObject](){
         didSet (objects) {
-            selectTeam(0)
+            if (objects.count > 0) {
+                selectTeam(0)
+            }
         }
     }
     
