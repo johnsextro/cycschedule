@@ -32,10 +32,6 @@ class MasterViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    required init!(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         objects = teamController.fetchAllTeams()
@@ -101,9 +97,11 @@ class MasterViewController: UITableViewController {
     }
     
     func selectTeam(selectedTeamIndex: Int) {
-        let detailItem = objects[selectedTeamIndex] as NSManagedObject!
-        let team = self.marshallObjectToTeam(detailItem)
-        self.delegate?.teamSelected(team)
+        if (objects.count > 0) {
+            let detailItem = objects[selectedTeamIndex] as NSManagedObject!
+            let team = self.marshallObjectToTeam(detailItem)
+            self.delegate?.teamSelected(team)
+        }
     }
     
     func marshallObjectToTeam(detailItem: NSManagedObject) -> Team {
