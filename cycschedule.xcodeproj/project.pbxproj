@@ -112,6 +112,7 @@
 				B137583A1B1D154400050AA1 /* DetailViewController.swift */,
 				B13758411B1D154400050AA1 /* LaunchScreen.xib */,
 				B13AE2471B2CDBD000F9B7A2 /* Team.swift */,
+				B19E48A21B63E42D00AAB666 /* TeamController.swift */,
 				B13AE24B1B2D027400F9B7A2 /* SeasonsViewController.swift */,
 				B17D55C81B2E1A4E00AA9B58 /* SchoolsViewController.swift */,
 				B17D55CA1B2E21CD00AA9B58 /* TeamsViewController.swift */,
@@ -119,7 +120,6 @@
 				B19F32EE1B33979800A995F3 /* Game.swift */,
 				B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */,
 				B13758341B1D154300050AA1 /* Supporting Files */,
-				B19E48A21B63E42D00AAB666 /* TeamController.swift */,
 			);
 			path = cycschedule;
 			sourceTree = "<group>";

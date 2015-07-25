@@ -77,6 +77,4 @@ class TeamsViewController: SelectionViewController {
         }
         do_table_refresh();
     }
-    
-
 }

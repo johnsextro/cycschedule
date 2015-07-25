@@ -3,11 +3,15 @@ import CoreData
 import UIKit
 
 class TeamController {
+    let appDelegate: AppDelegate
+    let managedContext: NSManagedObjectContext
+    
+    init() {
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedContext = appDelegate.managedObjectContext!
+    }
    
     func saveMyTeam(myteam: Team) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext!
-        
         let entity = NSEntityDescription.entityForName("Teams", inManagedObjectContext: managedContext)
         let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
@@ -19,6 +23,34 @@ class TeamController {
         var error: NSError?
         if !managedContext.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
+        }
+    }
+    
+    func deleteMyTeam(teamToDelete: NSManagedObject) {
+        let predicate = NSPredicate(format: "teamId == %@", (teamToDelete.valueForKey("teamId") as? String)!)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Teams")
+        fetchRequest.predicate = predicate
+        
+        let fetchedEntities = self.managedContext.executeFetchRequest(fetchRequest, error: nil) as! [NSManagedObject]
+        let entityToDelete = fetchedEntities.first
+        self.managedContext.deleteObject(entityToDelete!)
+        
+        self.managedContext.save(nil)
+    }
+    
+    func fetchAllTeams() ->  [NSManagedObject] {
+        let fetchRequest = NSFetchRequest(entityName:"Teams")
+        var error: NSError?
+        let fetchedResults =
+        managedContext.executeFetchRequest(fetchRequest,
+            error: &error) as? [NSManagedObject]
+        
+        if let results = fetchedResults {
+            return results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+            return []
         }
     }
 }
