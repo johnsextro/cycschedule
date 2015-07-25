@@ -12,6 +12,11 @@ class TeamController {
     }
    
     func saveMyTeam(myteam: Team) {
+        checkForUpcomingGamesTeamAndAddIfNecessary()
+        saveTeam(myteam)
+    }
+    
+    func saveTeam(myteam: Team) {
         let entity = NSEntityDescription.entityForName("Teams", inManagedObjectContext: managedContext)
         let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
@@ -51,6 +56,13 @@ class TeamController {
         } else {
             println("Could not fetch \(error), \(error!.userInfo)")
             return []
+        }
+    }
+    
+    func checkForUpcomingGamesTeamAndAddIfNecessary() {
+        let results = fetchAllTeams()
+        if results.count < 2 {
+            saveTeam(Team(name: "Upcoming Games", teamId: "-1", grade: "In the next 7 days", school: ""))
         }
     }
 }
