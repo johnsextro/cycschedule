@@ -23,6 +23,7 @@
 		B17D55D11B2F9FE500AA9B58 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */; };
 		B17D55D21B2F9FE500AA9B58 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */; };
 		B19E48A31B63E42D00AAB666 /* TeamController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E48A21B63E42D00AAB666 /* TeamController.swift */; };
+		B19E48A51B642CB900AAB666 /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E48A41B642CB900AAB666 /* ScheduleService.swift */; };
 		B19F32EF1B33979800A995F3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F32EE1B33979800A995F3 /* Game.swift */; };
 		B1B135C41B34BEA3001D1796 /* GameCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */; };
 		B1B135C71B34F010001D1796 /* MyTeams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1B135C51B34F010001D1796 /* MyTeams.xcdatamodeld */; };
@@ -59,6 +60,7 @@
 		B17D55CF1B2F9FE500AA9B58 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		B17D55D01B2F9FE500AA9B58 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		B19E48A21B63E42D00AAB666 /* TeamController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamController.swift; sourceTree = "<group>"; };
+		B19E48A41B642CB900AAB666 /* ScheduleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
 		B19F32EE1B33979800A995F3 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCustomCell.swift; sourceTree = "<group>"; };
 		B1B135C61B34F010001D1796 /* MyTeams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTeams.xcdatamodel; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B19F32EE1B33979800A995F3 /* Game.swift */,
 				B1B135C31B34BEA3001D1796 /* GameCustomCell.swift */,
 				B13758341B1D154300050AA1 /* Supporting Files */,
+				B19E48A41B642CB900AAB666 /* ScheduleService.swift */,
 			);
 			path = cycschedule;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				B13AE24C1B2D027400F9B7A2 /* SeasonsViewController.swift in Sources */,
 				B17D55CD1B2E26F500AA9B58 /* SelectionViewController.swift in Sources */,
 				B19F32EF1B33979800A995F3 /* Game.swift in Sources */,
+				B19E48A51B642CB900AAB666 /* ScheduleService.swift in Sources */,
 				B1B135C71B34F010001D1796 /* MyTeams.xcdatamodeld in Sources */,
 				B13758391B1D154400050AA1 /* MasterViewController.swift in Sources */,
 				B13AE2481B2CDBD000F9B7A2 /* Team.swift in Sources */,
