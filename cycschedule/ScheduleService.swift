@@ -2,6 +2,18 @@ import Foundation
 
 class ScheduleService {
     
+//    func fetchAllTeamSchedules(teams: [String: String], callback: (Array< Game >) -> ()) {
+//        callback(collectGamesForMultipleTeams(teams))
+//    }
+//    
+//    private func collectGamesForMultipleTeams(teams: [String: String]) -> Array< Game > {
+//        var allGames:Array< Game > = Array < Game >()
+//        for (teamId, teamName) in teams {
+//            allGames += self.buildArrayofGamesForTeam(teamId, teamName: teamName)
+//        }
+//        return allGames
+//    }
+    
     func fetchTeamSchedule(teamId: String, teamName: String, callback: (Array< Game >) -> ()) {
         var postEndpoint: String = "http://x8-avian-bricolage-r.appspot.com/games/GamesService.games"
         let timeout = 15
@@ -13,6 +25,7 @@ class ScheduleService {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         urlRequest.HTTPMethod = "POST"
         let queue = NSOperationQueue()
+        var gameArray: Array< Game > = Array< Game >()
         NSURLConnection.sendAsynchronousRequest(
             urlRequest,
             queue: queue,
@@ -29,6 +42,9 @@ class ScheduleService {
             }
         )
     }
+    
+    
+
     
     private func parseJSONIntoArrayofGames(data:NSString, teamName: String) -> Array< Game >{
         var parseError: NSError?
