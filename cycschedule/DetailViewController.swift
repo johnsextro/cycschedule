@@ -33,7 +33,12 @@ class DetailViewController: UITableViewController {
         cell.score.text = "Score: " + game.score
         cell.location.text = "Location: " + game.location
         
+//        var tempDateString = "2015-06-24"
+//        var dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        let today = dateFormatter.dateFromString(tempDateString)
         let today = NSDate()
+
         if (game.gameDateTime.compare(today) == .OrderedAscending) {
             cell.gameDate.enabled   = false
             cell.opponent.enabled   = false
@@ -71,6 +76,10 @@ class DetailViewController: UITableViewController {
 
     func handleServiceResponse(games: Array< Game >) {
         if (detailItem.teamId == "-1") {
+//            var tempDateString = "2015-06-24"
+//            var dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd"
+//            let today = dateFormatter.dateFromString(tempDateString)
             let today = NSDate()
             let dateIn7Days = NSDate(timeInterval: 604800, sinceDate: today)
             var upcomingGames = Array< Game >()
@@ -79,6 +88,9 @@ class DetailViewController: UITableViewController {
                     upcomingGames.append(game)
                 }
             }
+            upcomingGames.sort({ (g1: Game, g2: Game) -> Bool in
+                return g1.gameDateTime.compare(g2.gameDateTime) == .OrderedAscending
+            })
             self.games = upcomingGames
         } else {
             self.games = games
