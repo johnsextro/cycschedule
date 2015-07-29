@@ -4,7 +4,7 @@ class DetailViewController: UITableViewController {
     
     var games:Array< Game > = Array < Game >()
     let webService = ScheduleService()
-    
+    var teamId: String = ""
     var detailItem: Team! {
         didSet (team) {
             games.removeAll(keepCapacity: false)
@@ -29,8 +29,7 @@ class DetailViewController: UITableViewController {
         let dateString = formatter.stringFromDate(game.gameDateTime)
 
         cell.gameDate.text = dateString
-        var vsOrAt = (game.homeAway == "Home" ? "vs." : "at")
-        cell.opponent.text = vsOrAt + " " + game.opponent
+        cell.opponent.text = game.opponent + " at " + game.home
         cell.score.text = "Score: " + game.score
         cell.location.text = "Location: " + game.location
         
@@ -51,7 +50,11 @@ class DetailViewController: UITableViewController {
 
     func configureView() {
         navigationItem.title = detailItem.name
-        webService.fetchTeamSchedule(detailItem.teamId, teamName: detailItem.name, callback: self.handleServiceResponse)
+        if (detailItem.teamId == "-1") {
+            webService.fetchMultipleTeamSchedules(self.teamId, callback: self.handleServiceResponse)
+        } else {
+            webService.fetchTeamSchedule(self.teamId, callback: self.handleServiceResponse)
+        }
     }
 
     override func viewDidLoad() {
@@ -82,7 +85,8 @@ class DetailViewController: UITableViewController {
 
 //TODO remove extension
 extension DetailViewController: TeamSelectionDelegate {
-    func teamSelected(team: Team) {
-        detailItem = team
+    func teamSelected(team: Team, teamId: String) {
+        self.teamId = teamId
+        self.detailItem = team
     }
 }

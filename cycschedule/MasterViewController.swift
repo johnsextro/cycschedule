@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 
 protocol TeamSelectionDelegate: class {
-    func teamSelected(team: Team)
+    func teamSelected(team: Team, teamId: String)
 }
 
 class MasterViewController: UITableViewController {
@@ -100,7 +100,16 @@ class MasterViewController: UITableViewController {
         if (objects.count > 0) {
             let detailItem = objects[selectedTeamIndex] as NSManagedObject!
             let team = self.marshallObjectToTeam(detailItem)
-            self.delegate?.teamSelected(team)
+            if (team.teamId == "-1") {
+                var teamIds: String = ""
+                for object: NSManagedObject in objects {
+                    let tempTeam = self.marshallObjectToTeam(object)
+                    teamIds += teamIds.isEmpty ? tempTeam.teamId : "," + tempTeam.teamId
+                }
+                self.delegate?.teamSelected(team, teamId: teamIds)
+            } else {
+                self.delegate?.teamSelected(team, teamId: team.teamId)
+            }
         }
     }
     

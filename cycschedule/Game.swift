@@ -2,14 +2,14 @@ import Foundation
 
 struct Game {
     var gameDateTime: NSDate
-    var homeAway: String
     var opponent: String
     var location: String
     var gameId: String
     var score: String
+    var home: String
     
-    init(gameId: String, gameDate: String, gameTime: String, homeAway: String,
-    opponent: String, location: String, score: String) {
+    init(gameId: String, gameDate: String, gameTime: String,
+        opponent: String, location: String, score: String, home: String) {
         let dateStringFormatter = NSDateFormatter()
         dateStringFormatter.dateFormat = "MM/dd/yyyy h:mm a"
         dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
@@ -18,9 +18,9 @@ struct Game {
         
         self.gameId = gameId
         self.opponent = opponent
+        self.home = home
         self.location = location
         self.score = score
-        self.homeAway = homeAway
         self.gameDateTime = gameDateTime!
     }
 }
