@@ -45,7 +45,6 @@ class ScheduleService {
         var parseError: NSError?
         var games:Array< Game > = Array < Game >()
         let jsonData:NSData = data.dataUsingEncoding(NSASCIIStringEncoding)!
-        println(data)
         let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &parseError)
         if (parseError == nil)
         {

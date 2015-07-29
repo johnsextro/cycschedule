@@ -70,7 +70,19 @@ class DetailViewController: UITableViewController {
     }
 
     func handleServiceResponse(games: Array< Game >) {
-        self.games = games
+        if (detailItem.teamId == "-1") {
+            let today = NSDate()
+            let dateIn7Days = NSDate(timeInterval: 604800, sinceDate: today)
+            var upcomingGames = Array< Game >()
+            for game in games {
+                if (game.gameDateTime.compare(today) == .OrderedDescending && game.gameDateTime.compare(dateIn7Days) == .OrderedAscending) {
+                    upcomingGames.append(game)
+                }
+            }
+            self.games = upcomingGames
+        } else {
+            self.games = games
+        }
         do_table_refresh()
     }
     
