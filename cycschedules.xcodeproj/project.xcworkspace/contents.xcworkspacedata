@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:cycschedule.xcodeproj">
+      location = "self:/Users/Family/Documents/mobile_projects/cycschedule/cycschedules.xcodeproj">
    </FileRef>
 </Workspace>

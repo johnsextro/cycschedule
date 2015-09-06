@@ -1,11 +1,12 @@
 import UIKit
 import CoreData
+import iAd
 
 protocol TeamSelectionDelegate: class {
     func teamSelected(team: Team, teamId: String)
 }
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, ADBannerViewDelegate {
 
     var lastSelectedIndexPath: NSIndexPath?
     var newTeam: Team!
@@ -41,6 +42,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.canDisplayBannerAds = true
     }
 
     override func didReceiveMemoryWarning() {

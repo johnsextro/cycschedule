@@ -1,6 +1,7 @@
 import UIKit
+import iAd
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, ADBannerViewDelegate {
     
     var games:Array< Game > = Array < Game >()
     let webService = ScheduleService()
@@ -67,6 +68,7 @@ class DetailViewController: UITableViewController {
         if ((detailItem) != nil) {
             self.configureView()
         }
+        self.canDisplayBannerAds = true
     }
 
     override func didReceiveMemoryWarning() {
