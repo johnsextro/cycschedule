@@ -7,7 +7,7 @@ class DetailViewController: UITableViewController, ADBannerViewDelegate {
     let webService = ScheduleService()
     var teamId: String = ""
     var detailItem: Team! {
-        didSet (team) {
+        didSet (detailItem) {
             games.removeAll(keepCapacity: false)
             self.configureView()
         }
@@ -23,35 +23,38 @@ class DetailViewController: UITableViewController, ADBannerViewDelegate {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("GameCell", forIndexPath: indexPath) as! GameCustomCell
-        let game = games[indexPath.row] as Game
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "EEE, MMM d  h:mm a"
-        
-        let dateString = formatter.stringFromDate(game.gameDateTime)
+        if games.count > 0 {
+            let game = games[indexPath.row] as Game
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "EEE, MMM d  h:mm a"
+            
+            let dateString = formatter.stringFromDate(game.gameDateTime)
 
-        cell.gameDate.text = dateString
-        cell.opponent.text = game.opponent + " at " + game.home
-        cell.score.text = "Score: " + game.score
-        cell.location.text = "Location: " + game.location
-        
-//        var tempDateString = "2015-06-24"
-//        var dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let today = dateFormatter.dateFromString(tempDateString)
-        let today = NSDate()
+            cell.gameDate.text = dateString
+            cell.opponent.text = game.opponent + " at " + game.home
+            cell.score.text = "Score: " + game.score
+            cell.location.text = "Location: " + game.location
+            
+    //        var tempDateString = "2015-06-24"
+    //        var dateFormatter = NSDateFormatter()
+    //        dateFormatter.dateFormat = "yyyy-MM-dd"
+    //        let today = dateFormatter.dateFromString(tempDateString)
+            let today = NSDate()
 
-        if (game.gameDateTime.compare(today) == .OrderedAscending) {
-            cell.gameDate.enabled   = false
-            cell.opponent.enabled   = false
-            cell.score.enabled      = false
-            cell.location.enabled   = false
-        } else {
-            cell.gameDate.enabled   = true
-            cell.opponent.enabled   = true
-            cell.score.enabled      = true
-            cell.location.enabled   = true
+            if (game.gameDateTime.compare(today) == .OrderedAscending) {
+                cell.gameDate.enabled   = false
+                cell.opponent.enabled   = false
+                cell.score.enabled      = false
+                cell.location.enabled   = false
+            } else {
+                cell.gameDate.enabled   = true
+                cell.opponent.enabled   = true
+                cell.score.enabled      = true
+                cell.location.enabled   = true
+            }
         }
         return cell
+            
     }
 
     func configureView() {
