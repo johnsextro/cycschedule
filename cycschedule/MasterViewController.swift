@@ -79,6 +79,7 @@ class MasterViewController: UITableViewController, ADBannerViewDelegate {
             teamController.deleteMyTeam(teamToDelete)
             self.objects.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            if upcomingGamesIsLastRow() { deleteUpcomingGames() }
             
         default:
             return
@@ -87,6 +88,21 @@ class MasterViewController: UITableViewController, ADBannerViewDelegate {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         showSelectedTeamsSchedule(indexPath.item)
+    }
+    
+    func upcomingGamesIsLastRow() -> Bool {
+        var retVal = false
+        if objects.count == 1 {
+            retVal = true
+        }
+        return retVal
+    }
+    
+    func deleteUpcomingGames() {
+        teamController.deleteMyTeam(self.objects[0])
+        self.objects.removeAtIndex(0)
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
     }
 
     func showSelectedTeamsSchedule(selectedTeamIndex: Int) {
