@@ -25,14 +25,14 @@
         <!--Detail-->
         <scene sceneID="xyA-HH-DZb">
             <objects>
-                <tableViewController title="Detail" id="w01-h3-tGV" customClass="DetailViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Detail" id="w01-h3-tGV" customClass="DetailViewController" customModule="cycschedules" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" id="rff-Ka-lmc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="95" id="AxQ-mm-aFX" customClass="GameCustomCell" customModule="cycschedule" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameCell" rowHeight="95" id="AxQ-mm-aFX" customClass="GameCustomCell" customModule="cycschedules" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AxQ-mm-aFX" id="BiA-k4-aPv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -110,7 +110,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="cycschedules" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="63" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +167,7 @@
         <!--Seasons-->
         <scene sceneID="dbW-8H-WZz">
             <objects>
-                <tableViewController id="tAq-uJ-gcz" customClass="SeasonsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tAq-uJ-gcz" customClass="SeasonsViewController" customModule="cycschedules" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Cl5-Iu-VP7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--Schools-->
         <scene sceneID="Wnh-D1-znK">
             <objects>
-                <tableViewController id="D79-ev-2U1" customClass="SchoolsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="D79-ev-2U1" customClass="SchoolsViewController" customModule="cycschedules" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="x6g-a5-pWG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,7 +278,7 @@
         <!--Teams-->
         <scene sceneID="wmB-6d-EL0">
             <objects>
-                <tableViewController id="kel-yT-S7L" customClass="TeamsViewController" customModule="cycschedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kel-yT-S7L" customClass="TeamsViewController" customModule="cycschedules" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MxX-pc-1ht">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,7 +309,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Teams" id="ZTZ-32-61c">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="z51-1n-wJT">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="z51-1n-wJT">
                             <connections>
                                 <segue destination="4u5-jc-7KY" kind="unwind" identifier="SaveNewTeam" unwindAction="saveNewTeam:" id="2Wp-9P-6vB"/>
                             </connections>
